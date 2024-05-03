@@ -15,4 +15,14 @@ public class Model {
         return aux;
     }
 
+    public Coche getCoche(String matricula){
+        Coche aux = null;
+        for(int i = 0; i < parking.size(); i++){
+            if(parking.get(i).getMatricula().equals(matricula)){
+                aux = parking.get(i);
+                break;
+            }
+        }
+        return aux;
+    }
 }
