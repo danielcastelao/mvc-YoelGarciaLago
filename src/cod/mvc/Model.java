@@ -34,5 +34,15 @@ public class Model {
             }
         }
     }
+
+    public Integer getVelocidad(String matricula){
+        Integer aux = null;
+        for (int i = 0; i < parking.size(); i++){
+            if(parking.get(i).getMatricula().equals(matricula)){
+                aux =  parking.get(i).getVelocidad();
+            }
+        }
+        return aux;
+    }
 }
 
