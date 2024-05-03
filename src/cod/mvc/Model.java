@@ -25,4 +25,14 @@ public class Model {
         }
         return aux;
     }
+
+    public void cambiarVelocidad(String matricula, Integer velocidad){
+        for (int i = 0; i < parking.size(); i++){
+            if(parking.get(i).getMatricula().equals(matricula)){
+                parking.get(i).setVelocidad(parking.get(i).getVelocidad()+velocidad);
+                break;
+            }
+        }
+    }
 }
+
