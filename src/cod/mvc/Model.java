@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Model {
 
-    ArrayList<Coche> parking = new ArrayList<>();
+    static ArrayList<Coche> parking = new ArrayList<>();
 
-    public Coche crearCoche (String matricula, String modelo, Integer velocidad){
+    public static Coche crearCoche (String matricula, String modelo, Integer velocidad){
         Coche aux = null;
         aux.setMatricula(matricula);
         aux.setModelo(modelo);
@@ -15,7 +15,7 @@ public class Model {
         return aux;
     }
 
-    public Coche getCoche(String matricula){
+    public static Coche getCoche(String matricula){
         Coche aux = null;
         for(int i = 0; i < parking.size(); i++){
             if(parking.get(i).getMatricula().equals(matricula)){
@@ -26,7 +26,7 @@ public class Model {
         return aux;
     }
 
-    public void cambiarVelocidad(String matricula, Integer velocidad){
+    public static void cambiarVelocidad(String matricula, Integer velocidad){
         for (int i = 0; i < parking.size(); i++){
             if(parking.get(i).getMatricula().equals(matricula)){
                 parking.get(i).setVelocidad(parking.get(i).getVelocidad()+velocidad);
@@ -35,7 +35,7 @@ public class Model {
         }
     }
 
-    public Integer getVelocidad(String matricula){
+    public static Integer getVelocidad(String matricula){
         Integer aux = null;
         for (int i = 0; i < parking.size(); i++){
             if(parking.get(i).getMatricula().equals(matricula)){
