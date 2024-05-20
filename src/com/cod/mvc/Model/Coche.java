@@ -2,31 +2,26 @@ package com.cod.mvc.Model;
 //
 public class Coche {
 
-    private String matricula;
-    private String modelo;
-    private Integer velocidad;
+    public String matricula;
+    public String modelo;
+    public Integer velocidad;
 
-    public Coche(String matricula, String modelo, Integer velocidad) {
-        this.matricula = matricula;
+    public Coche(String modelo, String matricula) {
         this.modelo = modelo;
-        this.velocidad = velocidad;
+        this.matricula = matricula;
+        this.velocidad = 0;
     }
 
     public String getMatricula() {
         return matricula;
     }
 
-    public Integer getVelocidad() {
-        return velocidad;
-    }
 
     public String getModelo() {
         return modelo;
     }
 
-    public void setVelocidad(Integer velocidad) {
-        this.velocidad = velocidad;
-    }
+
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;

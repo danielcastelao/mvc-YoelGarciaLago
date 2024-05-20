@@ -12,20 +12,16 @@ public class Controller {
         
         ObserverVelocidad observoVelocidad = new ObserverVelocidad();
         miModel.addObserver(observoVelocidad);
+
+        ObserverLimite observoLimite = new ObserverLimite();
+        miModel.addObserver(observoLimite);
     }
 
-    public static void main(String [] args){
+    public void crearCoche(String laFerrari, String s) {
+        miModel.crearCoche(laFerrari,s);
+    }
 
-    Model.crearCoche("LaFerrari", "SBC 1234");
-    Model.crearCoche("Alpine", "HYU 4567");
-    Model.crearCoche("Aston Martin", "FGH 3333");
-
-    Coche ferrari = Model.getCoche("SBC 1234");
-    // modifica la velocidad
-    Model.cambiarVelocidad("SBC 1234", 30);
-    boolean hecho = View.muestraVelocidad("SBC 1234", Model.getVelocidad("SBC 1234"));
-
-    System.out.println(hecho);
-}
-
+    public void cambiarVelocidad(String s, Integer i) {
+        miModel.cambiarVelocidad(s,i);
+    }
 }
