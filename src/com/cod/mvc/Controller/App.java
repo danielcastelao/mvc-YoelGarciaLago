@@ -3,12 +3,8 @@ package com.cod.mvc.Controller;
 import com.cod.mvc.Model.Model;
 
 public class App {
+public static void main(String [] args){
 
-    public void creacionCoche() {
-        Model.crearCoche("wawa","wawa",33);
-    }
+}
 
-    public void mostrarCoche() {
-        Model.getCoche("wawa");
-    }
 }
