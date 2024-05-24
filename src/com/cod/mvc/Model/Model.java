@@ -16,6 +16,7 @@ public class Model implements Observable {
     // para los observadores
     private static final ArrayList<Observer> observers = new ArrayList<Observer>();
 
+
     @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
@@ -33,7 +34,7 @@ public class Model implements Observable {
     @Override
     public void notifyObservers(Coche coche) {
         for (Observer observer : observers) {
-            observer.update(coche);
+            observer.update(coche, this);
         }
     }
 
@@ -93,4 +94,5 @@ public class Model implements Observable {
     public Integer getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
+
 }
