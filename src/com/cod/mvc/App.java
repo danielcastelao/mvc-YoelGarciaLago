@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) {
         // Inicializamos la app
         // instanciamos el modelo
-        Model miModel = new Model();
+        Model miModel = Model.getInstance();
         // instanciamos el controlador
         // le pasamos el Model instanciado
         Controller miController = new Controller(miModel);
@@ -28,5 +28,7 @@ public class App {
         // sobrepasando la velocidad máxima
         miController.cambiarVelocidad("HYU 4567", 150);
 
+        miController.envioDeDatos("HYU 4567");
+        miController.envioDeDatos("a");
     }
 }

@@ -3,6 +3,7 @@ package com.cod.mvc.Model;
 import com.cod.mvc.Controller.Observer;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 /**
@@ -10,6 +11,19 @@ import java.util.ArrayList;
  * El Model será el encargado de notificar a los observadores
  */
 public class Model implements Observable {
+    //unica instancia de la clase
+    private static Model instance;
+
+    //Constructor privado para evitar instanciación
+    private Model(){}
+
+    //método para crear una la instance si es nula
+    public static Model getInstance(){
+        if(instance == null){
+            instance = new Model();
+        }
+        return instance;
+    }
     // array de coches
     static ArrayList<Coche> parking = new ArrayList<>();
 
@@ -94,5 +108,20 @@ public class Model implements Observable {
     public Integer getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
+
+    /**
+     *
+     * @param matricula necesario para buscar y crear el coche
+     * @return lista que tiene todos los parametros del coche
+     */
+    public String[] mostrarTodo(String matricula) {
+        Coche aux = getCoche(matricula);
+        if (aux == null) {
+            return new String[]{"no existe el coche", "no existe el coche", "no existe el coche"};
+        } else {
+            return new String[]{aux.getMatricula(), aux.getModelo(), String.valueOf(aux.getVelocidad())};
+        }
+    }
+
 
 }

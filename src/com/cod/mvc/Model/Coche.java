@@ -21,7 +21,13 @@ public class Coche {
         return modelo;
     }
 
+    public Integer getVelocidad() {
+        return velocidad;
+    }
 
+    public void setVelocidad(Integer velocidad) {
+        this.velocidad = velocidad;
+    }
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;
