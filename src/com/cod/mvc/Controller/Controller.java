@@ -9,7 +9,7 @@ public class Controller {
 
     public Controller(Model miModel) {
         this.miModel = miModel;
-        
+
         ObserverVelocidad observoVelocidad = new ObserverVelocidad();
         miModel.addObserver(observoVelocidad);
 
@@ -24,4 +24,19 @@ public class Controller {
     public void cambiarVelocidad(String s, Integer i) {
         miModel.cambiarVelocidad(s,i);
     }
+
+    /**
+     *
+     * @param matricula necesario para que el método del model obtenga los datos necesarios
+     */
+    public void envioDeDatos(String matricula){
+        String list[] = miModel.mostrarTodo(matricula);
+        if(list[1].equals("no existe el coche")){
+            View.mensajeNulo();
+        }
+        else{
+            View.mostrarTodo(list);
+        }
+    }
+
 }

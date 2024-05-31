@@ -28,5 +28,7 @@ public class App {
         // sobrepasando la velocidad máxima
         miController.cambiarVelocidad("HYU 4567", 150);
 
+        miController.envioDeDatos("HYU 4567");
+        miController.envioDeDatos("a");
     }
 }
