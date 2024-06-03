@@ -95,4 +95,21 @@ public class Model implements Observable {
         return getCoche(matricula).velocidad;
     }
 
+    public void bajarVelocidad(String matricula, int vADescender){
+
+        getCoche(matricula).velocidad -= vADescender;
+
+        if(getCoche(matricula).velocidad < vADescender)
+            getCoche(matricula).velocidad = 0;
+
+        notifyObservers(getCoche(matricula));
+    }
+
+    public void subirVelocidad(String matricula, int vAAumentar){
+        getCoche(matricula).velocidad += vAAumentar;
+
+
+        notifyObservers(getCoche(matricula));
+    }
+
 }

@@ -22,7 +22,11 @@ public class App {
         miController.crearCoche("Aston Martin", "FGH 3333");
 
         // Cambiar la velocidad de un coche
-        miController.cambiarVelocidad("SBC 1234", 30);
+        miController.cambiarVelocidad("SBC 1234", 60);
+        //bajar la velocidad a la mitad
+        miController.bajarVelocidad("SBC 1234", 30);
+        //subir la velocidad a 90
+        miController.subirVelocidad("SBC 1234", 60);
 
         // otro cambio de velocidad
         // sobrepasando la velocidad máxima
