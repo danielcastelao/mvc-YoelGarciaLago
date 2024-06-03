@@ -1,3 +1,4 @@
+
 package com.cod.mvc.Controller;
 import com.cod.mvc.Model.Model;
 import com.cod.mvc.Model.Coche;
@@ -9,7 +10,7 @@ public class Controller {
 
     public Controller(Model miModel) {
         this.miModel = miModel;
-        
+
         ObserverVelocidad observoVelocidad = new ObserverVelocidad();
         miModel.addObserver(observoVelocidad);
 
@@ -23,5 +24,13 @@ public class Controller {
 
     public void cambiarVelocidad(String s, Integer i) {
         miModel.cambiarVelocidad(s,i);
+    }
+
+    public void bajarVelocidad(String s, Integer i){
+        miModel.bajarVelocidad(s,i);
+    }
+
+    public void subirVelocidad(String s, Integer i){
+        miModel.subirVelocidad(s,i);
     }
 }
